@@ -11,7 +11,7 @@ const FavoritesView: React.FC = () => {
 
   return (
     <div className="space-y-6 pb-8">
-      <div className="flex items-end gap-6 -mt-6 -mx-6 p-6 bg-gradient-to-b from-pink-700/40 to-transparent">
+      <div className="flex flex-col md:flex-row md:items-end gap-6 -mt-6 -mx-6 p-6 bg-gradient-to-b from-pink-700/40 to-transparent">
         <div className="w-40 h-40 md:w-52 md:h-52 bg-gradient-to-br from-pink-500 to-purple-700 rounded-md shadow-2xl flex items-center justify-center flex-shrink-0">
           <Heart className="w-20 h-20 text-white fill-white" />
         </div>

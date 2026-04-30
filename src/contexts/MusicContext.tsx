@@ -52,6 +52,10 @@ interface MusicContextType {
   sidebarOpen: boolean;
   toggleSidebar: () => void;
 
+  // Lyrics
+  showLyrics: boolean;
+  toggleLyrics: () => void;
+
   // Actions
   playTrack: (track: Track, queue?: Track[]) => void;
   togglePlay: () => void;
@@ -143,6 +147,7 @@ export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [view, setView] = useState<View>({ type: 'home' });
   const [searchQuery, setSearchQuery] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showLyrics, setShowLyrics] = useState(false);
 
   // Player refs
   const ytPlayerRef = useRef<any>(null);
@@ -177,6 +182,7 @@ export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
 
   const toggleSidebar = () => setSidebarOpen((p) => !p);
+  const toggleLyrics = () => setShowLyrics((p) => !p);
 
   // Add to recently played
   const pushRecent = (id: string) => {
@@ -433,6 +439,8 @@ export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setSearchQuery,
         sidebarOpen,
         toggleSidebar,
+        showLyrics,
+        toggleLyrics,
         playTrack,
         togglePlay,
         next,

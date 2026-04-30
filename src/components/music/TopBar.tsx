@@ -43,14 +43,14 @@ const TopBar: React.FC = () => {
       ) : (
         <button
           onClick={() => setView({ type: 'search' })}
-          className="flex-1 max-w-md flex items-center gap-2 px-4 py-2 bg-neutral-800/80 hover:bg-neutral-700 rounded-full text-sm text-neutral-400"
+          className="flex-1 max-w-md flex items-center gap-2 px-4 py-2 bg-neutral-800/80 hover:bg-neutral-700 rounded-full text-sm text-neutral-400 min-w-0"
         >
-          <Search className="w-4 h-4" />
-          <span>Search songs, artists...</span>
+          <Search className="w-4 h-4 flex-shrink-0" />
+          <span className="truncate">Search songs, artists...</span>
         </button>
       )}
 
-      <div className="flex-1" />
+      <div className="hidden sm:block flex-1" />
 
       <button
         onClick={() => setView({ type: 'uploads' })}

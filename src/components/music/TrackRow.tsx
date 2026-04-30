@@ -59,7 +59,7 @@ const TrackRow: React.FC<Props> = ({ track, index, queue, onRemove }) => {
   return (
     <div
       className={cn(
-        'group grid grid-cols-[40px_1fr_40px_100px_100px_60px_40px] md:grid-cols-[40px_1fr_40px_120px_100px_80px_40px] items-center gap-4 px-4 py-2 rounded-md hover:bg-white/10 transition-colors',
+        'group grid grid-cols-[40px_1fr_40px_40px] sm:grid-cols-[40px_1fr_40px_60px_40px] md:grid-cols-[40px_1fr_40px_120px_100px_80px_40px] items-center gap-2 md:gap-4 px-2 md:px-4 py-2 rounded-md hover:bg-white/10 transition-colors',
         isCurrent && 'bg-white/5'
       )}
     >
@@ -125,7 +125,7 @@ const TrackRow: React.FC<Props> = ({ track, index, queue, onRemove }) => {
       </div>
 
       {/* Download */}
-      <div className="flex justify-center">
+      <div className="hidden md:flex justify-center">
         {track.downloadable ? (
           <button
             onClick={(e) => {
@@ -143,7 +143,7 @@ const TrackRow: React.FC<Props> = ({ track, index, queue, onRemove }) => {
       </div>
 
       {/* Duration */}
-      <div className="text-xs text-neutral-400 text-right">{track.duration || '—'}</div>
+      <div className="hidden sm:block text-xs text-neutral-400 text-right">{track.duration || '—'}</div>
 
       {/* More menu */}
       <div className="relative">

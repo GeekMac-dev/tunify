@@ -8,6 +8,7 @@ import SearchView from './music/views/SearchView';
 import FavoritesView from './music/views/FavoritesView';
 import PlaylistView from './music/views/PlaylistView';
 import UploadsView from './music/views/UploadsView';
+import LyricsView from './music/LyricsView';
 
 const Main: React.FC = () => {
   const { view } = useMusic();
@@ -34,7 +35,7 @@ const Main: React.FC = () => {
   }
 
   return (
-    <div className="flex-1 flex flex-col min-w-0 bg-gradient-to-b from-neutral-900 to-black overflow-hidden rounded-lg md:m-2">
+    <div className="flex-1 flex flex-col min-w-0 min-h-0 bg-gradient-to-b from-neutral-900 to-black overflow-hidden rounded-lg md:m-2">
       <TopBar />
       <main className="flex-1 overflow-y-auto px-4 md:px-6 pt-4 scrollbar-thin">
         {content}
@@ -45,10 +46,11 @@ const Main: React.FC = () => {
 
 const Shell: React.FC = () => {
   return (
-    <div className="h-screen w-screen bg-black text-white flex flex-col overflow-hidden">
-      <div className="flex-1 flex min-h-0">
+    <div className="fixed inset-0 bg-black text-white flex flex-col overflow-hidden">
+      <div className="flex-1 flex min-h-0 relative overflow-hidden">
         <Sidebar />
         <Main />
+        <LyricsView />
       </div>
       <Player />
     </div>
